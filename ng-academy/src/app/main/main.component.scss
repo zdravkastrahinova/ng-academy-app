@@ -1,0 +1,15 @@
+.info {
+    color: lightblue;
+}
+
+.warning {
+    color: orange;
+}
+
+section {
+    display: flex;
+
+    app-course-item-card {
+        width: 20%;
+    }
+}
