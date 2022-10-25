@@ -1,0 +1,43 @@
+{
+  "courses": [
+    {
+      "id": 1,
+      "name": "Angular course",
+      "description": "Angular basics course description",
+      "categoryId": 1
+    },
+    {
+      "id": 2,
+      "name": "React course",
+      "description": "React course description",
+      "categoryId": 1
+    },
+    {
+      "id": 3,
+      "name": "C#",
+      "categoryId": 2
+    },
+    {
+      "name": "test",
+      "description": "test",
+      "categoryId": 1,
+      "id": 4
+    },
+    {
+      "name": "tralala",
+      "description": "alabala",
+      "categoryId": 1,
+      "id": 5
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "Frontend"
+    },
+    {
+      "id": 2,
+      "name": "Backend"
+    }
+  ]
+}

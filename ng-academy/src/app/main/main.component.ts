@@ -1,30 +1,26 @@
 import { Component, OnInit } from '@angular/core';
 import { CourseModel } from '../models/course.model';
+import { CoursesService } from '../services/courses.service';
 
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.scss']
 })
-export class MainComponent {
+export class MainComponent implements OnInit {
 
   courses: CourseModel[];
   favoriteCourse: CourseModel;
 
-  constructor() {
-    this.courses = [
-      {
-        name: 'Angular course',
-        description: 'Angular basics course description'
-      },
-      {
-        name: 'React course',
-        description: 'React course description'
-      },
-      {
-        name: 'C#'
-      }
-    ];
+   constructor(private coursesService: CoursesService) {
+   }
+
+   ngOnInit(): void {
+     this.coursesService.getAll$().subscribe({
+       next: (response: CourseModel[]) => {
+         this.courses = response;
+       }
+     });
    }
 
    onItemClick(course: CourseModel): void {
