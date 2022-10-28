@@ -18,6 +18,15 @@ const routes: Routes = [
   {
     path: 'create',
     component: CourseFormComponent
+  },
+  {
+    path: 'edit/:id',
+    component: CourseFormComponent
+  },
+  {
+    path: '',
+    redirectTo: 'list',
+    pathMatch: 'full'
   }
 ];
 

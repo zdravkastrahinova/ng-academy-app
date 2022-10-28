@@ -13,5 +13,7 @@
 <section>
     <app-course-item-card 
         *ngFor="let c of courses"
-        [course]="c" (clicked)="onItemClick($event)"></app-course-item-card>
+        [course]="c" 
+        (clicked)="onItemClick($event)"
+        (deleted)="onItemDeleted($event)"></app-course-item-card>
 </section>

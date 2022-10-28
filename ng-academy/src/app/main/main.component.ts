@@ -26,4 +26,12 @@ export class MainComponent implements OnInit {
    onItemClick(course: CourseModel): void {
      this.favoriteCourse = course;
    }
+
+   onItemDeleted(id: number): void {
+     this.coursesService.delete$(id).subscribe({
+       next: () => {
+         this.courses = this.courses.filter(c => c.id !== id);
+       }
+     });
+   }
 }

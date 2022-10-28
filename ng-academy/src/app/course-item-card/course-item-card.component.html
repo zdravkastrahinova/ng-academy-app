@@ -4,7 +4,10 @@
     <p>{{ course?.description }}</p>
 
     <div>
-        <button class="button" 
-                (click)="onClick()">Mark as favorite</button>
+        <button class="button" (click)="onClick()">Mark as favorite</button>
+
+        <a [routerLink]="['/edit', course?.id]">Edit</a>
+
+        <button class="button" (click)="onDelete()">Delete</button>
     </div>
 </article>

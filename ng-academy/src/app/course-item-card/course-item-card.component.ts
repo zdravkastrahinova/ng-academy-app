@@ -11,10 +11,15 @@ export class CourseItemCardComponent {
   @Input() course: CourseModel;
 
   @Output() clicked: EventEmitter<CourseModel> = new EventEmitter<CourseModel>();
+  @Output() deleted: EventEmitter<number> = new EventEmitter<number>();
 
   constructor() { }
 
   onClick(): void {
     this.clicked.emit(this.course);
+  }
+
+  onDelete(): void {
+    this.deleted.emit(this.course.id);
   }
 }

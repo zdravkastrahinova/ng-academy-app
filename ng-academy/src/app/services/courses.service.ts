@@ -17,7 +17,19 @@ export class CoursesService {
         return this.http.get<CourseModel[]>(this.url);
     }
 
+    getById$(id: number): Observable<CourseModel> {
+        return this.http.get<CourseModel>(`${this.url}/${id}`);
+    }
+
     post$(body: CourseModel): Observable<CourseModel> {
         return this.http.post<CourseModel>(this.url, body);
+    }
+
+    put$(body: CourseModel): Observable<CourseModel> {
+        return this.http.put<CourseModel>(`${this.url}/${body.id}`, body);
+    }
+
+    delete$(id: number): Observable<undefined> {
+        return this.http.delete<undefined>(`${this.url}/${id}`);
     }
 }
